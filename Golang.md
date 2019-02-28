@@ -22,7 +22,7 @@
         --pkg                 <<--- 编译的中间文件放在此文件夹，Go编译器自动生成此文件夹
         --bin                 <<--- 编译的目标文件放在此文件夹，Go编译器自动生成此文件夹
 
-#### Go 依赖管理 dep ####
+#### Go 依赖管理 dep(由于 iris 问题暂时不能使用) ####
 
     1 install dep
         https://golang.github.io/dep/docs/installation.html
@@ -55,7 +55,14 @@
       然后下载两个文件:
         wget https://raw.githubusercontent.com/kataras/iris/5bdbffebc8a4a525a9ec8f9d6425fc22f615f03c/Gopkg.toml
         wget https://raw.githubusercontent.com/kataras/iris/5bdbffebc8a4a525a9ec8f9d6425fc22f615f03c/Gopkg.lock
-        
+
+#### Go 依赖管理工具: go mod ####
+
+    1. 初始化项目: go mod init project_name
+        生成 go.mod 和 go.sum
+    2. go mod vender
+        把依赖复制 vender 文件夹
+    3. go mod tidy
 
 #### Go 开发工具 ####
 
