@@ -32,6 +32,7 @@
 
     加分项:
     熟悉Python语言，熟悉Django/Flask框架，有Web系统项目开发经验者优先
+    熟悉Go语言，熟悉 iris 框架，有Web系统项目开发经验者优先
     理解DevOps理念，熟悉Docker、Kubernetes 等技术优先
     熟悉 Elasticsearch 者优先
     熟悉 gRPC 着优先
