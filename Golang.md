@@ -61,7 +61,7 @@
     1. 初始化项目: go mod init project_name
         生成 go.mod 和 go.sum
     2. go mod vender
-        把依赖复制 vender 文件夹
+        把依赖复制 vendor 文件夹
     3. go mod tidy
 
 #### Go 开发工具 ####
