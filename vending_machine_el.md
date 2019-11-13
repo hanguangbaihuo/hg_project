@@ -27,23 +27,26 @@
     #### 2 二维码 生产成方法 ####
         参数:
         {
-            "product_id": "1",                          # 汉光商品ID(闪购ID)
-            "nonce": "23455",                           # 一次性字符串
+            "products": "(2342, 1)-(1334, 2)",          # 汉光商品ID和数量列表
+            "nonce": "2343455",                         # 一次性字符串
             "app_id": "app_1534851431",                 # 汉光分配的app_id
             "timestamp": "1534853718",                  # 时间戳
             "sign": "A1D05398BE89B4906006364DE2725579", # 签名
             "jump_type": "vm"                           # 固定参数
         }
+        Note:
+           products字段说明, 字符串：
+               单个商品: (132438,1)             # 第一个数字是商品ID，第二个数字是商品数量
+               多个商品: (132438,1)-(128899,2)  # 多个商品之间是用“-”隔开
         二维码内容拼接(测试系统)
         https://sparrow.dongyouliang.com/wx-app/jumpBridge?
-        jump_type=vm&order_id=12345&product_id=1&app_id=app_1534851431&timestamp=1534853718&nonce=23455&sign=A1D05398BE89B4906006364DE2725579
+        jump_type=vm&order_id=12345&products=(2342, 1)-(1334, 2)&app_id=app_1534851431&timestamp=1534853718&nonce=23455&sign=A1D05398BE89B4906006364DE2725579
 
         二维码内容拼接(正式系统)
         https://sparrow.hanguangbaihuo.com/wx-app/jumpBridge?
-        jump_type=vm&order_id=12345&product_id=1&app_id=app_1534851431&timestamp=1534853718&nonce=23455&sign=A1D05398BE89B4906006364DE2725579
+        jump_type=vm&order_id=12345&products=(2342, 1)-(1334, 2)&app_id=app_1534851431&timestamp=1534853718&nonce=23455&sign=A1D05398BE89B4906006364DE2725579
 
         将这个url生成二维码供用户扫码使用
-
             Note:
                 测试和正式的区别是: 前缀不同
                 测试系统: https://sparrow.dongyouliang.com/wx-app/jumpBridge
