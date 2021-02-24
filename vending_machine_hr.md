@@ -16,12 +16,12 @@
                 "nonce": "23455",               # 一次性字符串,长度不超过8位
                 "app_id": "app_1534851431",     # 汉光分配的app_id
                 "app_secret": "dkdkkkkdkdk",    # 从汉光获取的 密钥
-                "vm_order_id": "12345",         # 自动售货机订单ID
+                "vmhr_order_id": "12345",         # 自动售货机订单ID
                 "timestamp": "1534853718",      # 时间戳
                 "source": "vm_hr",              # 来源: 固定为 vm_hr
             }
         1 将上述参数按照key值进行排序(参数名ASCII码从小到大排序,字典序)，按照key=value的格式拼接成一个字符串
-            "app_id=app_1534851431&app_secret=dkdkkkkdkdk&nonce=23455&product=23432&timestamp=1534853718&vm_order_id=12345&source=vm_hr"
+            "app_id=app_1534851431&app_secret=dkdkkkkdkdk&nonce=23455&product=23432&timestamp=1534853718&vmhr_order_id=12345&source=vm_hr"
         2 对这个字符串取MD5，然后大写
             可获得类似: A1D05398BE89B4906006364DE2725579 的签名
 
@@ -31,13 +31,13 @@
             "product": "23432",                         # 汉光商品ID和
             "nonce": "23455",                           # 一次性字符串
             "app_id": "app_1534851431",                 # 汉光分配的app_id
-            "vm_order_id": "12345",                     # 自动售货机订单ID
+            "vmhr_order_id": "12345",                   # 自动售货机订单ID
             "timestamp": "1534853718",                  # 时间戳
             "sign": "A1D05398BE89B4906006364DE2725579", # 步骤1里面的签名
             "source": "vm_hr"
         }
         1 将上述参数按照key=value拼接成一个字符串(排序无所谓)
-            "app_id=app_1534851431&product=23432&nonce=23455&timestamp=1534853718&vm_order_id=12345&source=vm_hr&sign=A1D05398BE89B4906006364DE2725579"
+            "app_id=app_1534851431&product=23432&nonce=23455&timestamp=1534853718&vmhr_order_id=12345&source=vm_hr&sign=A1D05398BE89B4906006364DE2725579"
         2 把 1 里面的字符串进行base64, 所获取的值为 vm_code
             YXBwX2lkPWFwcF8xNTM0ODUxNDMxJnByb2R1Y3Q9MjM0MzImbm9uY2U9MjM0NTUmdGltZXN0YW1wPTE1MzQ4NTM3MTgmdm1fb3JkZXJfaWQ9MTIzNDUmc291cmNlPXZtX2hyJnNpZ249QTFEMDUzOThCRTg5QjQ5MDYwMDYzNjRERTI3MjU1Nzk=
 
@@ -65,7 +65,7 @@
         该接口: 需要合作伙伴提供一个接收汉光百货消息推送的 接口
         参数：
             {
-                "vm_order_id": "12345",     # 自动售货机的订单号
+                "vmhr_order_id": "12345",   # 自动售货机的订单号
                 "price": "341.97",          # 订单原始价格
                 "app_id": "app_343434",     # 汉光分配的app_id
                 "timestamp": "12345657",    # 时间戳
