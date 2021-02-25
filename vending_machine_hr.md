@@ -47,7 +47,7 @@
             vm_code          : 上面生成的 vm_code 值
 
         二维码内容拼接(测试系统)
-        https://sparrow.dongyouliang.com/wx-app/jumpBridge?jump_type=vm_v1&vm_code=YXBwX2lkPWFwcF8xNTM0ODUxNDMxJnByb2R1Y3Q9MjM0MzImbm9uY2U9MjM0NTUmdGltZXN0YW1wPTE1MzQ4NTM3MTgmdm1fb3JkZXJfaWQ9MTIzNDUmc291cmNlPXZtX2hyJnNpZ249QTFEMDUzOThCRTg5QjQ5MDYwMDYzNjRERTI3MjU1Nzk=
+        https://sparrow-test.hanguangbaihuo.com/wx-app/jumpBridge?jump_type=vm_v1&vm_code=YXBwX2lkPWFwcF8xNTM0ODUxNDMxJnByb2R1Y3Q9MjM0MzImbm9uY2U9MjM0NTUmdGltZXN0YW1wPTE1MzQ4NTM3MTgmdm1fb3JkZXJfaWQ9MTIzNDUmc291cmNlPXZtX2hyJnNpZ249QTFEMDUzOThCRTg5QjQ5MDYwMDYzNjRERTI3MjU1Nzk=
 
         二维码内容拼接(正式系统)
         https://sparrow.hanguangbaihuo.com/wx-app/jumpBridge?jump_type=vm_v1&vm_code=YXBwX2lkPWFwcF8xNTM0ODUxNDMxJnByb2R1Y3Q9MjM0MzImbm9uY2U9MjM0NTUmdGltZXN0YW1wPTE1MzQ4NTM3MTgmdm1fb3JkZXJfaWQ9MTIzNDUmc291cmNlPXZtX2hyJnNpZ249QTFEMDUzOThCRTg5QjQ5MDYwMDYzNjRERTI3MjU1Nzk=
@@ -55,7 +55,7 @@
         将这个url生成二维码供用户扫码使用
             Note:
                 测试和正式的区别是: 前缀不同
-                测试系统: https://sparrow.dongyouliang.com/wx-app/jumpBridge
+                测试系统: https://sparrow-test.hanguangbaihuo.com/wx-app/jumpBridge
                 正式系统: https://sparrow.hanguangbaihuo.com/wx-app/jumpBridge
 
 
