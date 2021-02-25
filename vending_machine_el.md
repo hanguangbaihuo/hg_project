@@ -21,7 +21,7 @@
                 "source": "vm_el",                          # 来源
             }
         2 将上述参数按照key值进行排序后，按照key=value的格式拼接成一个字符串
-            "app_id=app_1534851431&app_secret=cdke8945lk92dc5b889c40a0519&nonce=23455&product_id=1&timestamp=1534853718&order_id=12345&source=vm_el"
+            "app_id=app_1534851431&app_secret=cdke8945lk92dc5b889c40a0519&nonce=23455&products=(2342,1)-(1334,2)&timestamp=1534853718&order_id=12345&source=vm_el"
         3 对这个字符串取MD5，然后大写
             可获得类似: A1D05398BE89B4906006364DE2725579 的签名
 
@@ -42,11 +42,11 @@
                多个商品: (132438,1)-(128899,2)  # 多个商品之间是用“-”隔开
         二维码内容拼接(测试系统)
         https://sparrow.dongyouliang.com/wx-app/jumpBridge?
-        jump_type=vm_el&source=vm_el&order_id=12345&products=(2342, 1)-(1334, 2)&app_id=app_1534851431&timestamp=1534853718&nonce=23455&sign=A1D05398BE89B4906006364DE2725579
+        jump_type=vm_el&source=vm_el&order_id=12345&products=(2342,1)-(1334,2)&app_id=app_1534851431&timestamp=1534853718&nonce=23455&sign=A1D05398BE89B4906006364DE2725579
 
         二维码内容拼接(正式系统)
         https://sparrow.hanguangbaihuo.com/wx-app/jumpBridge?
-        jump_type=vm_el&source=vm_el&order_id=12345&products=(2342, 1)-(1334, 2)&app_id=app_1534851431&timestamp=1534853718&nonce=23455&sign=A1D05398BE89B4906006364DE2725579
+        jump_type=vm_el&source=vm_el&order_id=12345&products=(2342,1)-(1334,2)&app_id=app_1534851431&timestamp=1534853718&nonce=23455&sign=A1D05398BE89B4906006364DE2725579
 
         将这个url生成二维码供用户扫码使用
             Note:
