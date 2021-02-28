@@ -25,32 +25,24 @@
         2 对这个字符串取MD5，然后大写
             可获得类似: A1D05398BE89B4906006364DE2725579 的签名
 
-    #### 2 vm_code 生成方法 ####
+    #### 2 二维码 生产成方法 ####
         参数:
-        {
-            "product": "23432",                         # 汉光商品ID和
-            "nonce": "23455",                           # 一次性字符串
-            "app_id": "app_1534851431",                 # 汉光分配的app_id
-            "vmhr_order_id": "12345",                   # 自动售货机订单ID
-            "timestamp": "1534853718",                  # 时间戳
-            "sign": "A1D05398BE89B4906006364DE2725579", # 步骤1里面的签名
-            "source": "vm_hr"
-        }
-        1 将上述参数按照key=value拼接成一个字符串(排序无所谓)
-            "app_id=app_1534851431&product=23432&nonce=23455&timestamp=1534853718&vmhr_order_id=12345&source=vm_hr&sign=A1D05398BE89B4906006364DE2725579"
-        2 把 1 里面的字符串进行base64, 所获取的值为 vm_code
-            YXBwX2lkPWFwcF8xNTM0ODUxNDMxJnByb2R1Y3Q9MjM0MzImbm9uY2U9MjM0NTUmdGltZXN0YW1wPTE1MzQ4NTM3MTgmdm1fb3JkZXJfaWQ9MTIzNDUmc291cmNlPXZtX2hyJnNpZ249QTFEMDUzOThCRTg5QjQ5MDYwMDYzNjRERTI3MjU1Nzk=
+            {
+                "jump_type": "vm_v1"                        # 固定
+                "product": "23432",                         # 汉光商品ID和
+                "nonce": "23455",                           # 一次性字符串
+                "app_id": "app_1534851431",                 # 汉光分配的app_id
+                "vmhr_order_id": "12345",                   # 自动售货机订单ID
+                "timestamp": "1534853718",                  # 时间戳
+                "sign": "A1D05398BE89B4906006364DE2725579", # 步骤1里面的签名
+                "source": "vm_hr"
+            }
 
-    #### 3 二维码 生产成方法 ####
-        参数:
-            jump_type=vm_v1  : 固定
-            vm_code          : 上面生成的 vm_code 值
-
-        二维码内容拼接(测试系统)
-        https://sparrow-test.hanguangbaihuo.com/wx-app/jumpBridge?jump_type=vm_v1&vm_code=YXBwX2lkPWFwcF8xNTM0ODUxNDMxJnByb2R1Y3Q9MjM0MzImbm9uY2U9MjM0NTUmdGltZXN0YW1wPTE1MzQ4NTM3MTgmdm1fb3JkZXJfaWQ9MTIzNDUmc291cmNlPXZtX2hyJnNpZ249QTFEMDUzOThCRTg5QjQ5MDYwMDYzNjRERTI3MjU1Nzk=
+        二维码内容拼接(测试系统): 把上面参数放到url参数里面即可(无顺序要求)
+        https://sparrow-test.hanguangbaihuo.com/wx-app/jumpBridge?jump_type=vm_v1&app_id=app_1534851431&product=23432&nonce=23455&timestamp=1534853718&vmhr_order_id=12345&source=vm_hr&sign=A1D05398BE89B4906006364DE2725579
 
         二维码内容拼接(正式系统)
-        https://sparrow.hanguangbaihuo.com/wx-app/jumpBridge?jump_type=vm_v1&vm_code=YXBwX2lkPWFwcF8xNTM0ODUxNDMxJnByb2R1Y3Q9MjM0MzImbm9uY2U9MjM0NTUmdGltZXN0YW1wPTE1MzQ4NTM3MTgmdm1fb3JkZXJfaWQ9MTIzNDUmc291cmNlPXZtX2hyJnNpZ249QTFEMDUzOThCRTg5QjQ5MDYwMDYzNjRERTI3MjU1Nzk=
+        https://sparrow.hanguangbaihuo.com/wx-app/jumpBridge?jump_type=vm_v1&app_id=app_1534851431&product=23432&nonce=23455&timestamp=1534853718&vmhr_order_id=12345&source=vm_hr&sign=A1D05398BE89B4906006364DE2725579
 
         将这个url生成二维码供用户扫码使用
             Note:
@@ -59,7 +51,7 @@
                 正式系统: https://sparrow.hanguangbaihuo.com/wx-app/jumpBridge
 
 
-    #### 4 支付成功后，汉光百货支付后推送消息 ####
+    #### 3 支付成功后，汉光百货支付后推送消息 ####
 
         请求方式：POST
         该接口: 需要合作伙伴提供一个接收汉光百货消息推送的 接口
